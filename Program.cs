@@ -1,4 +1,6 @@
-﻿Console.Write("Hisoblamoqchi bo'lgan matematik amalni kiriting (a + b - c): ");
+﻿Console.WriteLine("Hisoblamoqchi bo'lgan qo'shish va ayirish amallarini kiriting.");
+Console.Write("(Izoh. Faqat bir xonali sonlar va a+b-c-d... ketma-ketligida): ");
+
 string action = Console.ReadLine();
 
 int count = 0;
