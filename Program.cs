@@ -1,18 +1,26 @@
-﻿string action = Console.ReadLine();
+﻿Console.Write("Hisoblamoqchi bo'lgan matematik amalni kiriting (a + b - c): ");
+string action = Console.ReadLine();
 
-int firstNumber = action[0] - '0';
-int secondNumber = action[0] - '0';
+int count = 0;
+int summa = 0;
+char sign = '+';
 
-switch (action[1])
+while(count != action.Length)
 {
-    case '+':
-        {
-            Console.WriteLine(firstNumber + secondNumber);
-            break;
-        }
-    case '-':
-        {
-            Console.WriteLine(firstNumber - secondNumber);
-            break;
-        }
+    if(count % 2 == 0 && sign == '+')
+    {
+        summa += action[count] - '0';
+    }
+    else if(count % 2 == 0 && sign == '-')
+    {
+        summa -= action[count] - '0';
+    }
+    else
+    {
+        sign = action[count];
+    }
+
+    count ++;
 }
+
+Console.WriteLine(action + "=" + summa);
