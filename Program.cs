@@ -1,8 +1,6 @@
 ﻿Console.WriteLine("Hisoblamoqchi bo'lgan qo'shish va ayirish amallarini kiriting.");
 Console.Write("(Izoh. Faqat a+b-c-d... ketma-ketligida kiriting): ");
 
-// 12-23+43-21-33
-
 string action = Console.ReadLine();
 
 int count = 0;
