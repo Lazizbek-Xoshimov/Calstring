@@ -1,28 +1,55 @@
 ﻿Console.WriteLine("Hisoblamoqchi bo'lgan qo'shish va ayirish amallarini kiriting.");
-Console.Write("(Izoh. Faqat bir xonali sonlar va a+b-c-d... ketma-ketligida): ");
+Console.Write("(Izoh. Faqat a+b-c-d... ketma-ketligida kiriting): ");
+
+// 12-23+43-21-33
 
 string action = Console.ReadLine();
 
 int count = 0;
 int summa = 0;
+string number = "0";
 char sign = '+';
 
-while(count != action.Length)
+while (count != action.Length)
 {
-    if(count % 2 == 0 && sign == '+')
+    if (action[count] == '+' || action[count] == '-')
     {
-        summa += action[count] - '0';
-    }
-    else if(count % 2 == 0 && sign == '-')
-    {
-        summa -= action[count] - '0';
+        switch (sign)
+        {
+            case '+':
+                {
+                    summa += int.Parse(number);
+                    break;
+                }
+            case '-':
+                {
+                    summa -= int.Parse(number);
+                    break;
+                }
+        }
+        number = "";
+        sign = action[count];
     }
     else
     {
-        sign = action[count];
+        number += action[count];
     }
 
     count ++;
+}
+
+switch (sign)
+{
+    case '+':
+        {
+            summa += int.Parse(number);
+            break;
+        }
+    case '-':
+        {
+            summa -= int.Parse(number);
+            break;
+        }    
 }
 
 Console.WriteLine(action + "=" + summa);
