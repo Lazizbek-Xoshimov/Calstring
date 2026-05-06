@@ -5,7 +5,7 @@ Perform user-entered actions
 *The program calculates mathematical operations of addition and subtraction involving optional operands.*
 
 ## 🪟 Preview
-![program_performance](assets/program_performance.gif)
+![thirdOption](assets/thirdOption.gif)
 
 ### ⚙️ Technologies
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="30"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" width="30"/>
