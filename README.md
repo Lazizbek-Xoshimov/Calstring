@@ -15,3 +15,6 @@ Perform user-entered actions
 - *working with if else*
 - *string methods*
 - *char type*
+
+### 🤝Future development
+*You can improve performance by using the StringBuilder class instead of the string data type.*
