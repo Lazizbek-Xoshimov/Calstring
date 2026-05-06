@@ -8,46 +8,53 @@ int summa = 0;
 string number = "0";
 char sign = '+';
 
-while (count != action.Length)
+string inputUser = string.Empty;
+do
 {
-    if (action[count] == '+' || action[count] == '-')
+    while (count != action.Length)
     {
-        switch (sign)
+        if (action[count] == '+' || action[count] == '-')
         {
-            case '+':
-                {
-                    summa += int.Parse(number);
-                    break;
-                }
-            case '-':
-                {
-                    summa -= int.Parse(number);
-                    break;
-                }
+            switch (sign)
+            {
+                case '+':
+                    {
+                        summa += int.Parse(number);
+                        break;
+                    }
+                case '-':
+                    {
+                        summa -= int.Parse(number);
+                        break;
+                    }
+            }
+            number = "";
+            sign = action[count];
         }
-        number = "";
-        sign = action[count];
+        else
+        {
+            number += action[count];
+        }
+
+        count ++;
     }
-    else
+
+    switch (sign)
     {
-        number += action[count];
+        case '+':
+            {
+                summa += int.Parse(number);
+                break;
+            }
+        case '-':
+            {
+                summa -= int.Parse(number);
+                break;
+            }    
     }
 
-    count ++;
-}
-
-switch (sign)
-{
-    case '+':
-        {
-            summa += int.Parse(number);
-            break;
-        }
-    case '-':
-        {
-            summa -= int.Parse(number);
-            break;
-        }    
-}
-
-Console.WriteLine(action + "=" + summa);
+    Console.WriteLine(action + "=" + summa);
+    Console.WriteLine("Dasturdan chiqishni xohlaysizmi?");
+    Console.Write("(ha/yo'q): ");
+    inputUser = Console.ReadLine();
+} while (inputUser.ToLower() == "yo'q");
