@@ -14,47 +14,53 @@ namespace Calstring
 
                 string action = Console.ReadLine();
 
-                int count = 0;
-                int summa = 0;
-                string number = "0";
-                char sign = '+';
+                Console.WriteLine(SumOfString(action));
 
-                while (count <= action.Length)
-                {
-                    if (count == action.Length || action[count] == '+' || action[count] == '-')
-                    {
-                        switch (sign)
-                        {
-                            case '+':
-                                {
-                                    summa += int.Parse(number);
-                                    break;
-                                }
-                            case '-':
-                                {
-                                    summa -= int.Parse(number);
-                                    break;
-                                }
-                        }
-
-                        if (count < action.Length)
-                            sign = action[count];
-
-                        number = "";
-                    }
-                    else
-                    {
-                        number += action[count];
-                    }
-
-                    count ++;
-                }
-
-                Console.WriteLine(action + "=" + summa);
                 Console.WriteLine("Dasturdan chiqishni xohlaysizmi?");
                 Console.Write("(ha/yo'q): ");
                 inputUser = Console.ReadLine();
             } while (inputUser.ToLower() == "yo'q");
+        }
+
+        public static string SumOfString(string action)
+        {
+            int count = 0;
+            int summa = 0;
+            string number = string.Empty;
+            char sign = '+';
+
+            while (count <= action.Length)
+            {
+                if (count == action.Length || action[count] == '+' || action[count] == '-')
+                {
+                    switch (sign)
+                    {
+                        case '+':
+                            {
+                                summa += int.Parse(number);
+                                break;
+                            }
+                        case '-':
+                            {
+                                summa -= int.Parse(number);
+                                break;
+                            }
+                    }
+
+                    if (count < action.Length)
+                        sign = action[count];
+
+                    number = "";
+                }
+                else
+                {
+                    number += action[count];
+                }
+
+                count ++;
+            }
+
+            return action + "=" + summa;
         }
     }
 }
